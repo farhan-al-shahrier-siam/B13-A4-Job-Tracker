@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Job Application Tracker</title>
 
+        <!-- font awesome cdn -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +17,7 @@
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <style>
-            *{
+            * {
                 font-family: "Geist", sans-serif;
             }
         </style>
@@ -37,6 +40,42 @@
                 </div>
             </div>
         </header>
+
+        <main class="w-[80%] mx-auto mt-8">
+            <!-- available job section -->
+            <div class="flex justify-between">
+                <h2 class="font-semibold text-xl">Available Jobs</h2>
+                <p class="text-[#64748B]"><span id="jobCount">0</span> jobs</p>
+            </div>
+
+            <!-- filter button section -->
+            <div class="py-4 flex gap-3">
+                <button class="cursor-pointer bg-[#3B82F6] text-white px-8 py-[10px] border border-gray-200 rounded-sm" id="all-filter-btn">All</button>
+                <button class="cursor-pointer bg-white px-8 py-[10px] border border-gray-200 rounded-sm" id="interview-filter-btn">Interview</button>
+                <button class="cursor-pointer bg-white px-8 py-[10px] border border-gray-200 rounded-sm" id="rejected-filter-btn">Rejected</button>
+            </div>
+
+            <!-- all job cards section -->
+            <section id="all-job-cards">
+                <div class="job-card p-6 flex justify-between bg-white rounded-xl shadow">
+                    <div class=>
+                        <h2 class="companyName font-semibold text-xl mb-1">Mobile First Corp</h2>
+                        <p class="jobTitle text-[#64748B]">React Native Developer</p>
+                        <p class="jobtype text-gray-400 my-5">Remote • Full-time • $130,000 - $175,000</p>
+                        <p class="jobStatus "><span class="bg-gray-200 rounded-sm py-2 px-3">Not Applied</span></p>
+                        <p class="jobDescription text-gray-600 mt-3">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                        <div class="mt-5 flex gap-3">
+                            <button class="cursor-pointer interview-btn text-green-500 py-2 px-3 border rounded-sm">INTERVIEW</button>
+                            <button class="cursor-pointer rejected-btn text-red-500 py-2 px-3 border rounded-sm">REJECTED</button>
+                        </div>
+
+                    </div>
+                    <div>
+                        <button class="btn-delete cursor-pointer p-1 border rounded-sm"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </section>
+        </main>
 
         <script src="./script/script.js"></script>
     </body>
