@@ -110,6 +110,15 @@ mainContainer.addEventListener("click", function (event) {
         if (currentStatus == "interview-filter-btn") {
             renderInterviewSection();
         }
+    } else if(event.target.closest(".btn-delete")){
+        // deletes the clicked button card
+        event.target.parentNode.parentNode.parentNode.remove();
+        const jobCard = event.target.parentNode.parentNode.parentNode;
+        const companyName = jobCard.querySelector('.companyName').innerText
+        console.log(companyName)
+        interviewList = interviewList.filter((item) => item.companyName != companyName);
+        rejectedList = rejectedList.filter((item) => item.companyName != companyName);
+
     }
     countCalculator();
 });
@@ -147,7 +156,7 @@ function renderInterviewSection() {
 
         </div>
         <div>
-            <button class="btn-delete cursor-pointer p-1 border rounded-sm"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="btn-delete cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
         </div>
         `;
             filteredSection.appendChild(div);
@@ -188,7 +197,7 @@ function renderRejectSection() {
 
         </div>
         <div>
-            <button class="btn-delete cursor-pointer p-1 border rounded-sm"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="btn-delete cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
         </div>
         `;
             filteredSection.appendChild(div);
